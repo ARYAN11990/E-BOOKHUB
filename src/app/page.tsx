@@ -1,101 +1,100 @@
-import Image from "next/image";
+import Link from 'next/link';
+import CourseCard from '@/components/ui/CourseCard';
+import { mockCourses } from '@/data/mockCourses';
+import { BookOpen, Star, TrendingUp, Users } from 'lucide-react';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const featuredCourses = mockCourses.slice(0, 4);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-surface-main">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-surface-soft border-b border-border-light">
+        {/* Subtle decorative background shapes */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-lavender rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 bg-brand-pink rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        
+        <div className="container mx-auto px-4 py-24 md:py-32 relative z-10 text-center max-w-4xl">
+          <span className="inline-block py-1.5 px-4 rounded-full bg-brand-lavender text-brand-purple font-bold text-xs uppercase tracking-wider mb-6 shadow-sm border border-brand-purple/10">
+            Learn Skills, Build Your Future
+          </span>
+          <h1 className="text-4xl md:text-6xl font-extrabold text-text-primary mb-6 leading-tight tracking-tight">
+            Master highly-paid skills and <span className="text-brand-purple">start earning online</span>
+          </h1>
+          <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
+            Premium PDF e-books and comprehensive digital courses covering Freelancing, Digital Marketing, E-commerce, and more.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <Link href="/courses" className="btn-primary w-full sm:w-auto text-lg py-3 px-8">
+              Explore All Courses
+            </Link>
+            <Link href="/categories" className="btn-secondary w-full sm:w-auto text-lg py-3 px-8">
+              View Categories
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-12 bg-surface-main border-b border-border-light">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-text-muted font-semibold text-sm md:text-base">
+            <div className="flex items-center"><Users className="w-5 h-5 mr-2 text-brand-purple" /> 10,000+ Students</div>
+            <div className="flex items-center"><Star className="w-5 h-5 mr-2 text-brand-purple" /> 4.9/5 Average Rating</div>
+            <div className="flex items-center"><BookOpen className="w-5 h-5 mr-2 text-brand-purple" /> Premium E-books</div>
+            <div className="flex items-center"><TrendingUp className="w-5 h-5 mr-2 text-brand-purple" /> Lifetime Access</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Courses */}
+      <section className="py-20 bg-surface-subtle">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-text-primary mb-4 tracking-tight">Trending Courses</h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">Discover our most popular courses and start your journey today.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredCourses.map(course => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link href="/courses" className="btn-secondary inline-block">
+              View Entire Catalog
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Bundled Offer */}
+      <section className="py-24 bg-surface-main">
+        <div className="container mx-auto px-4">
+          <div className="bg-surface-dark rounded-[24px] p-8 md:p-16 text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple rounded-full filter blur-[100px] opacity-40"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-pinkDark rounded-full filter blur-[100px] opacity-20"></div>
+            
+            <div className="relative z-10">
+              <span className="inline-block bg-brand-pink text-brand-pinkDark font-extrabold px-4 py-1.5 rounded-full text-sm mb-6 uppercase tracking-wider">
+                Limited Time Offer
+              </span>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">The Ultimate Creator Bundle</h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Get ALL 24 premium courses (worth ₹18,000+) for a single one-time payment.
+              </p>
+              <div className="flex items-end justify-center space-x-4 mb-10">
+                <span className="text-6xl font-extrabold text-white">₹1,999</span>
+                <span className="text-2xl text-gray-500 line-through font-bold mb-2">₹18,000</span>
+              </div>
+              <button className="bg-white text-gray-900 font-extrabold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                Unlock Everything Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

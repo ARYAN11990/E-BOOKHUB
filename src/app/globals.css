@@ -1,27 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --brand-purple: #5B2EFF;
+    --brand-purpleDark: #4F24D8;
+    --brand-purpleLight: #6D3DF5;
+    --brand-accent: #8B5CF6;
+    --brand-lavender: #EDE9FE;
+    --brand-pink: #FCE7F3;
+    --brand-pinkDark: #EC4899;
+    --brand-success: #10B981;
+    --brand-successLight: #ECFDF5;
+    
+    --surface-main: #FFFFFF;
+    --surface-soft: #F8F9FF;
+    --surface-subtle: #F4F3FF;
+    --surface-dark: #111827;
+    
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6B7280;
+    --text-placeholder: #9CA3AF;
+    
+    --border-light: #E5E7EB;
+    --border-purple: #E9E5FF;
+  }
+
+  .dark {
+    --brand-purple: #8B5CF6; /* Lighter purple for dark mode */
+    --brand-purpleDark: #7C3AED;
+    --brand-purpleLight: #A78BFA;
+    --brand-accent: #C4B5FD;
+    --brand-lavender: #2E1065;
+    --brand-pink: #831843;
+    --brand-pinkDark: #F472B6;
+    --brand-success: #34D399;
+    --brand-successLight: #064E3B;
+    
+    --surface-main: #0F1115; /* Dark background */
+    --surface-soft: #161B22;
+    --surface-subtle: #1C2128;
+    --surface-dark: #000000;
+    
+    --text-primary: #F9FAFB;
+    --text-secondary: #D1D5DB;
+    --text-muted: #9CA3AF;
+    --text-placeholder: #6B7280;
+    
+    --border-light: #374151;
+    --border-purple: #4C1D95;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--surface-main);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-purple to-brand-purpleLight text-white font-semibold py-2.5 px-6 rounded-lg transition-all hover:from-brand-purpleDark hover:to-brand-purple shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface-main border border-brand-purple text-brand-purple font-semibold py-2.5 px-6 rounded-lg transition-all hover:bg-brand-lavender hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .card-container {
+    @apply bg-surface-main rounded-[16px] border border-border-light shadow-soft transition-all duration-300 hover:shadow-hover hover:-translate-y-1 overflow-hidden;
   }
 }
