@@ -4,7 +4,7 @@ import { mockCourses } from '@/data/mockCourses';
 import { BookOpen, Star, TrendingUp, Users } from 'lucide-react';
 
 export default function Home() {
-  const featuredCourses = mockCourses.slice(0, 4);
+  const featuredCourses = mockCourses.slice(0, 8);
 
   return (
     <div className="min-h-screen bg-surface-main">

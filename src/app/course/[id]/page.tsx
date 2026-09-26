@@ -4,6 +4,7 @@ import { mockCourses } from '@/data/mockCourses';
 import { notFound } from 'next/navigation';
 import { CheckCircle, Shield, PlayCircle, BookOpen, Clock } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 
 export default function CourseDetails({ params }: { params: { id: string } }) {
@@ -46,11 +47,16 @@ export default function CourseDetails({ params }: { params: { id: string } }) {
           
           <div className="md:w-1/2 w-full max-w-md">
             <div className="bg-surface-main rounded-2xl shadow-sm border border-border-light relative overflow-hidden group flex flex-col">
-              <img 
-                src={course.thumbnailUrl} 
-                alt={course.title} 
-                className="w-full h-auto object-cover"
-              />
+              <div className="relative w-full aspect-video">
+                <Image 
+                  src={course.thumbnailUrl} 
+                  alt={course.title} 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
               <div className="p-6 flex flex-col">
                 <div className="text-text-muted line-through text-sm">Original Price: ₹{course.originalPrice}</div>
                 <div className="text-4xl font-extrabold text-text-primary flex items-center gap-4">

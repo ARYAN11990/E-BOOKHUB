@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { CheckCircle } from 'lucide-react';
 import { Course } from '@/data/mockCourses';
 
@@ -12,27 +13,28 @@ export default function CourseCard({ course }: CourseCardProps) {
 
   return (
     <div className="card-container flex flex-col group h-full cursor-pointer relative">
-      {/* Badges Overlay */}
-      <div className="absolute top-3 left-3 right-3 flex justify-between z-10">
-        <span className="bg-brand-successLight text-brand-success text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm uppercase tracking-wider">
-          {course.difficulty}
-        </span>
-        <span className="bg-brand-lavender text-brand-purple text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm uppercase tracking-wider">
-          PDF E-book
-        </span>
-      </div>
-
       {/* Image Container */}
       <div className="relative w-full aspect-video overflow-hidden bg-surface-soft border-b border-border-light">
-        <img 
+        <Image 
           src={course.thumbnailUrl} 
           alt={course.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-grow">
+        <div className="flex gap-2 mb-3">
+          <span className="bg-brand-successLight text-brand-success text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
+            {course.difficulty}
+          </span>
+          <span className="bg-brand-lavender text-brand-purple text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
+            PDF E-book
+          </span>
+        </div>
+
         <h3 className="text-lg font-bold text-text-primary mb-2 line-clamp-2 leading-tight group-hover:text-brand-purple transition-colors">
           {course.title}
         </h3>
