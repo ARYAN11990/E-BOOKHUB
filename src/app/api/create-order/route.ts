@@ -21,8 +21,8 @@ export async function POST(req: Request) {
     const coursesDb = JSON.parse(fs.readFileSync(dataFilePath, 'utf-8'));
     
     let secureTotal = 0;
-    cartIds.forEach(id => {
-      const dbCourse = coursesDb.find((c: any) => c.id === id);
+    cartIds.forEach((id: string) => {
+      const dbCourse = coursesDb.find((c: { id: string; currentPrice: number }) => c.id === id);
       if (dbCourse) {
         secureTotal += dbCourse.currentPrice;
       }

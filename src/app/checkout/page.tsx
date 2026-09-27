@@ -46,14 +46,13 @@ export default function CheckoutPage() {
         return alert(data.error || 'Failed to initialize payment.');
       }
 
-      const options = {
+            const options = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // Use actual key in .env.local
         amount: data.order.amount,
         currency: 'INR',
         name: 'Learnora',
         description: 'Course Purchase',
         order_id: data.order.id,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         handler: async function (response: any) {
           const verifyRes = await fetch('/api/verify-payment', {
             method: 'POST',
@@ -82,8 +81,7 @@ export default function CheckoutPage() {
         },
       };
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any`n      const rzp = new (window as any).Razorpay(options);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const rzp = new (window as any).Razorpay(options);
       rzp.on('payment.failed', function (response: any) {
         router.push('/payment-failed');
       });
