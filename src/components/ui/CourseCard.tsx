@@ -76,7 +76,7 @@ export default function CourseCard({ course }: CourseCardProps) {
           </div>
 
           <div className="flex mt-2">
-            <Link href={`/course/${course.id}`} className="btn-primary w-full text-center py-2.5 text-sm font-semibold">
+            <Link href={`/checkout?courseId=${course.id}`} className="btn-primary w-full text-center py-2.5 text-sm font-semibold">
               Buy Now
             </Link>
           </div>

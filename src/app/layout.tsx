@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { CartProvider } from "@/context/CartContext";
+
 import { ThemeProvider } from "@/components/ThemeProvider";
 import AmbientBackground from "@/components/ui/AmbientBackground";
 
@@ -34,14 +34,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <CartProvider>
+          
             <AmbientBackground />
             <Header />
             <main className="flex-grow">
               {children}
             </main>
             <Footer />
-          </CartProvider>
+          
         </ThemeProvider>
       </body>
     </html>
