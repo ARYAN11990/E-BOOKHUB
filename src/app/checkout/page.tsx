@@ -157,13 +157,13 @@ function CheckoutForm() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-text-primary">Email Address (Optional)</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
+                <label className="block text-sm font-medium mb-2 text-text-primary">Mobile Number *</label>
+                <input type="tel" name="mobileNumber" required value={formData.mobileNumber} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
               </div>
               
               <div>
-                <label className="block text-sm font-medium mb-2 text-text-primary">Mobile Number *</label>
-                <input type="tel" name="mobileNumber" required value={formData.mobileNumber} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
+                <label className="block text-sm font-medium mb-2 text-text-primary">Email Address (Optional)</label>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
               </div>
 
               <div className="flex items-start pt-4 border-t border-border-light">
