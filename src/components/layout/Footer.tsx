@@ -9,11 +9,9 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="inline-flex items-center space-x-3 mb-6 group">
               <div className="bg-surface-main rounded p-1 flex items-center justify-center">
-                <img src="/logo.jpg" alt="EBookHub Logo" className="h-8 w-auto object-contain transition-transform group-hover:scale-105" />
+                <img src="/logo.png" alt="EBookHub Logo" className="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
               </div>
-              <span className="text-2xl font-extrabold text-white tracking-tight">
-                Learnora
-              </span>
+              
             </Link>
             <p className="text-sm mb-6 text-gray-400 leading-relaxed">
               Learn Today. Earn Tomorrow. Premium digital marketing & online skill e-books for modern learners.

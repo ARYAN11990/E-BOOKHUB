@@ -22,7 +22,7 @@ export default function Home() {
             Master highly-paid skills and <span className="text-brand-purple">start earning online</span>
           </h1>
           <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
-            Premium PDF e-books and comprehensive digital courses covering Freelancing, Digital Marketing, E-commerce, and more.
+            Premium e-books and comprehensive digital courses covering Freelancing, Digital Marketing, E-commerce, and more.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link href="/courses" className="btn-primary w-full sm:w-auto text-lg py-3 px-8">
