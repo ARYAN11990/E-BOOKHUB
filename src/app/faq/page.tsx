@@ -1,3 +1,5 @@
+'use client';
+
 export default function FAQPage() {
   const faqs = [
     { q: "What will I receive after purchasing?", a: "You will receive lifetime access to a downloadable PDF e-book containing the complete course material." },
@@ -22,11 +24,11 @@ export default function FAQPage() {
         
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-surface-main p-6 rounded-2xl border border-border-light shadow-sm">
-              <h3 className="text-lg font-bold text-text-primary mb-2 flex items-start">
-                <span className="text-brand-purple mr-3">Q.</span> {faq.q}
+            <div key={index} className="bg-surface-soft p-6 rounded-2xl border border-border-light shadow-sm">
+              <h3 className="text-lg font-bold text-text-primary mb-3 flex items-start">
+                <span className="text-brand-purple mr-3 font-extrabold text-xl">Q.</span> {faq.q}
               </h3>
-              <p className="text-text-secondary ml-8">{faq.a}</p>
+              <p className="text-text-secondary ml-8 font-medium leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
