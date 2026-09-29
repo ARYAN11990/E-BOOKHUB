@@ -1,5 +1,15 @@
-/* eslint-disable */
-import { NextResponse } from 'next/server';
+const fs = require('fs');
+
+// 1. Update Checkout Page to send customerDetails and courseId
+let checkout = fs.readFileSync('src/app/checkout/page.tsx', 'utf-8');
+checkout = checkout.replace(
+  `              razorpay_signature: response.razorpay_signature,\n            }),`,
+  `              razorpay_signature: response.razorpay_signature,\n              customerDetails: formData,\n              courseId: course.id,\n            }),`
+);
+fs.writeFileSync('src/app/checkout/page.tsx', checkout);
+
+// 2. Rewrite verify-payment route
+const verifyCode = `import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
@@ -13,7 +23,7 @@ export async function POST(req: Request) {
     // Create the expected signature
     const generated_signature = crypto
       .createHmac('sha256', secret)
-      .update(`${razorpay_order_id}|${razorpay_payment_id}`)
+      .update(\`\${razorpay_order_id}|\${razorpay_payment_id}\`)
       .digest('hex');
 
     // Compare signatures
@@ -43,7 +53,7 @@ export async function POST(req: Request) {
                 courseName: dbCourse.title,
                 amount: dbCourse.currentPrice,
                 // Provide a direct link to the course (you will need to host your PDFs somewhere like Google Drive or AWS S3 and map them)
-                pdfLink: `https://learnora.com/download/${courseId}` // Placeholder link
+                pdfLink: \`https://learnora.com/download/\${courseId}\` // Placeholder link
               })
             }).catch(e => console.error("Webhook trigger failed:", e));
           }
@@ -62,3 +72,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: false, message: 'Server error during verification' }, { status: 500 });
   }
 }
+`;
+fs.writeFileSync('src/app/api/verify-payment/route.ts', verifyCode);

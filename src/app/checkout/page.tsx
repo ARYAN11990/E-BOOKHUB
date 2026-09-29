@@ -66,6 +66,8 @@ function CheckoutForm() {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
+              customerDetails: formData,
+              courseId: course.id,
             }),
           });
           const verifyData = await verifyRes.json();

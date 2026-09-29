@@ -43,16 +43,17 @@ function SuccessContent() {
       </p>
       
       <div className="space-y-4">
-        {/* Fake download button that simulates a download for now */}
-        <button 
-          onClick={() => {
-            alert('Your E-book PDF is downloading! (Note: Replace this alert with actual PDF file link later)');
-          }} 
-          className="w-full btn-primary py-4 flex items-center justify-center text-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1"
-        >
-          <Download className="w-6 h-6 mr-3" />
-          Download Your PDF
-        </button>
+        {/* Real download link to public/pdfs/courseId.pdf */}
+        {course ? (
+          <a 
+            href={`/pdfs/${course.id}.pdf`} 
+            download
+            className="w-full btn-primary py-4 flex items-center justify-center text-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1"
+          >
+            <Download className="w-6 h-6 mr-3" />
+            Download Your PDF
+          </a>
+        ) : null}
         
         <Link href="/" className="w-full btn-secondary py-3 flex items-center justify-center text-text-secondary">
           Return to Home
