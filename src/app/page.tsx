@@ -95,7 +95,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">The Ultimate Creator Bundle</h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Get ALL 24 premium courses (worth ₹18,000+) for a single one-time payment.
-              </p>
+              </p>    
               <div className="flex items-end justify-center space-x-4 mb-10">
                 <span className="text-6xl font-extrabold text-white">₹1,999</span>
                 <span className="text-2xl text-gray-500 line-through font-bold mb-2">₹18,000</span>
