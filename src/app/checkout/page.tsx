@@ -70,7 +70,7 @@ function CheckoutForm() {
           });
           const verifyData = await verifyRes.json();
           if (verifyData.success) {
-            router.push('/payment-success');
+            router.push('/payment-success?courseId=' + course.id);
           } else {
             router.push('/payment-failed');
           }

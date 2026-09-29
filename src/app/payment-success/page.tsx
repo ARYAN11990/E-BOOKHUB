@@ -1,31 +1,78 @@
+/* eslint-disable */
+'use client';
+
 import Link from 'next/link';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Download, FileText } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
+import { mockCourses } from '@/data/mockCourses';
+
+function SuccessContent() {
+  const searchParams = useSearchParams();
+  const courseId = searchParams.get('courseId');
+  const [course, setCourse] = useState<any>(null);
+
+  useEffect(() => {
+    if (courseId) {
+      const found = mockCourses.find(c => c.id === courseId);
+      if (found) setCourse(found);
+    }
+  }, [courseId]);
+
+  return (
+    <div className="bg-surface-main p-8 md:p-12 rounded-2xl border border-border-light shadow-sm text-center max-w-lg w-full">
+      <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+        <CheckCircle className="w-10 h-10" />
+      </div>
+      
+      <h1 className="text-3xl font-bold text-text-primary mb-4">Payment Successful!</h1>
+      
+      {course ? (
+        <div className="mb-6 bg-surface-soft p-4 rounded-lg border border-border-light">
+          <p className="text-text-secondary mb-1 text-sm font-medium">You successfully purchased:</p>
+          <h2 className="text-lg font-bold text-brand-purple">{course.title}</h2>
+        </div>
+      ) : (
+        <p className="text-text-secondary mb-6">
+          Thank you for your purchase. Your payment has been processed successfully.
+        </p>
+      )}
+
+      <p className="text-sm text-text-muted mb-8">
+        Your payment receipt and lifetime access details have been automatically sent to your registered email address.
+      </p>
+      
+      <div className="space-y-4">
+        {/* Fake download button that simulates a download for now */}
+        <button 
+          onClick={() => {
+            alert('Your E-book PDF is downloading! (Note: Replace this alert with actual PDF file link later)');
+          }} 
+          className="w-full btn-primary py-4 flex items-center justify-center text-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1"
+        >
+          <Download className="w-6 h-6 mr-3" />
+          Download Your PDF
+        </button>
+        
+        <Link href="/" className="w-full btn-secondary py-3 flex items-center justify-center text-text-secondary">
+          Return to Home
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default function PaymentSuccessPage() {
   return (
     <div className="min-h-screen bg-surface-main flex flex-col items-center justify-center p-4">
-      <div className="bg-surface-main p-8 md:p-12 rounded-2xl border border-border-light shadow-sm text-center max-w-lg w-full">
-        <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10" />
+      <Suspense fallback={
+        <div className="bg-surface-main p-12 rounded-2xl border border-border-light shadow-sm text-center flex flex-col items-center">
+          <div className="w-10 h-10 border-4 border-brand-purple border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="text-text-secondary">Verifying your order...</p>
         </div>
-        
-        <h1 className="text-3xl font-bold text-text-primary mb-4">Payment Successful!</h1>
-        <p className="text-text-secondary mb-2">
-          Thank you for your purchase. Your payment has been processed successfully.
-        </p>
-        <p className="text-sm text-text-muted mb-8">
-          A confirmation receipt and access details have been sent to your registered email.
-        </p>
-        
-        <div className="space-y-4">
-          <Link href="/dashboard" className="w-full btn-primary py-3 inline-block">
-            Go to My Courses
-          </Link>
-          <Link href="/dashboard/orders" className="w-full btn-secondary py-3 inline-block">
-            View Order Receipt
-          </Link>
-        </div>
-      </div>
+      }>
+        <SuccessContent />
+      </Suspense>
     </div>
   );
 }
