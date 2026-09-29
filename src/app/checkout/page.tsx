@@ -18,8 +18,8 @@ function CheckoutForm() {
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
+    firstName: '',
+    lastName: '',
     mobileNumber: '',
     acceptTerms: false
   });
@@ -76,8 +76,7 @@ function CheckoutForm() {
           }
         },
         prefill: {
-          name: formData.fullName,
-          email: formData.email,
+          name: formData.firstName + ' ' + formData.lastName,
           contact: formData.mobileNumber,
         },
         theme: {
@@ -146,24 +145,25 @@ function CheckoutForm() {
             <div className="bg-brand-purple/10 border border-brand-purple/30 p-4 rounded-lg mb-6 flex items-start">
               <AlertCircle className="w-5 h-5 text-brand-purple mr-3 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-brand-purple/90 font-medium">
-                Your course access and receipt will be sent directly to this email address.
+                You will get instant access to download your E-book immediately after payment.
               </p>
             </div>
 
             <form id="checkout-form" onSubmit={handlePayment} className="space-y-5 text-text-primary">
-              <div>
-                <label className="block text-sm font-medium mb-2 text-text-primary">Full Name *</label>
-                <input type="text" name="fullName" required value={formData.fullName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-text-primary">First Name *</label>
+                  <input type="text" name="firstName" required value={formData.firstName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2 text-text-primary">Last Name *</label>
+                  <input type="text" name="lastName" required value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
+                </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2 text-text-primary">Mobile Number *</label>
                 <input type="tel" name="mobileNumber" required value={formData.mobileNumber} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2 text-text-primary">Email Address (Optional)</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
               </div>
 
               <div className="flex items-start pt-4 border-t border-border-light">
