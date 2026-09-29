@@ -15,8 +15,18 @@ export async function POST(req: Request) {
     const buffer = Buffer.from(bytes);
 
     // Create unique filename
-    const filename = `${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
-    const uploadDir = path.join(process.cwd(), 'public', 'course-thumbnails');
+    const filename = `${Date.now()}-${file.name.replace(/\\s+/g, '_')}`;
+    
+    let uploadDir;
+    let fileUrl;
+
+    if (file.type === 'application/pdf') {
+      uploadDir = path.join(process.cwd(), 'public', 'pdfs');
+      fileUrl = `/pdfs/${filename}`;
+    } else {
+      uploadDir = path.join(process.cwd(), 'public', 'course-thumbnails');
+      fileUrl = `/course-thumbnails/${filename}`;
+    }
     
     // Ensure directory exists
     if (!fs.existsSync(uploadDir)) {
@@ -25,8 +35,6 @@ export async function POST(req: Request) {
 
     const filepath = path.join(uploadDir, filename);
     fs.writeFileSync(filepath, buffer);
-
-    const fileUrl = `/course-thumbnails/${filename}`;
 
     return NextResponse.json({ success: true, url: fileUrl });
   } catch (error) {

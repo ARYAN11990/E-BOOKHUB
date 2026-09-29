@@ -10,6 +10,7 @@ export interface Course {
   discountPercentage: number;
   thumbnailUrl: string;
   categoryId: string;
+  pdfUrl?: string;
 }
 
 export const mockCourses: Course[] = courses as Course[];

@@ -8,7 +8,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438581663-ChatGPT_Image_Sep_26,_2026,_10_22_04_AM.png",
-    "categoryId": "online-earning"
+    "categoryId": "online-earning",
+    "pdfUrl": "/pdfs/1790684718312-new The_Online_Income_Playbook_FINAL.pdf"
   },
   {
     "id": "c2",
@@ -19,7 +20,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438661067-ChatGPT_Image_Sep_26,_2026,_10_21_30_AM.png",
-    "categoryId": "freelancing"
+    "categoryId": "freelancing",
+    "pdfUrl": "/pdfs/1790684742663-LEARNORA_Freelancing_Starter_Guide.pdf"
   },
   {
     "id": "c3",
@@ -30,7 +32,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790442138784-ChatGPT_Image_Sep_26,_2026,_09_49_58_PM.png",
-    "categoryId": "content-creation"
+    "categoryId": "content-creation",
+    "pdfUrl": "/pdfs/1790684759596-LEARNORA_Canva_Design_for_Beginners_2026.pdf"
   },
   {
     "id": "c4",
@@ -41,7 +44,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790442152335-ChatGPT_Image_Sep_26,_2026,_09_50_32_PM.png",
-    "categoryId": "social-media"
+    "categoryId": "social-media",
+    "pdfUrl": "/pdfs/1790684775348-LEARNORA_Instagram_Growth_Blueprint_2026.pdf"
   },
   {
     "id": "c5",
@@ -52,7 +56,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790442168957-ChatGPT_Image_Sep_26,_2026,_09_50_27_PM.png",
-    "categoryId": "content-creation"
+    "categoryId": "content-creation",
+    "pdfUrl": "/pdfs/1790684798116-LEARNORA_Content_Writing_Mastery.pdf"
   },
   {
     "id": "c6",
@@ -63,7 +68,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790442189425-ChatGPT_Image_Sep_26,_2026,_10_31_28_PM.png",
-    "categoryId": "ai"
+    "categoryId": "ai",
+    "pdfUrl": "/pdfs/1790684830266-LEARNORA_AI_Tools_for_Daily_Work.pdf"
   },
   {
     "id": "c7",
@@ -74,7 +80,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790442212200-ChatGPT_Image_Sep_26,_2026,_10_30_49_PM.png",
-    "categoryId": "personal-branding"
+    "categoryId": "personal-branding",
+    "pdfUrl": "/pdfs/1790684852507-LEARNORA_Personal_Branding_Starter_Guide.pdf"
   },
   {
     "id": "c8",
@@ -85,7 +92,8 @@
     "currentPrice": 299,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790442230724-ChatGPT_Image_Sep_26,_2026,_10_30_52_PM.png",
-    "categoryId": "content-creation"
+    "categoryId": "content-creation",
+    "pdfUrl": "/pdfs/1790684874721-LEARNORA_YouTube_Channel_Starter_Guide_2026.pdf"
   },
   {
     "id": "c9",
@@ -96,7 +104,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438781693-ChatGPT_Image_Sep_26,_2026,_10_58_10_AM.png",
-    "categoryId": "pinterest-marketing"
+    "categoryId": "pinterest-marketing",
+    "pdfUrl": "/pdfs/1790684924351-LEARNORA_Pinterest_Marketing_Mastery_2026.pdf"
   },
   {
     "id": "c10",
@@ -107,7 +116,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438810645-Affiliate_Marketing_Blueprint_Dashboard.png",
-    "categoryId": "affiliate-marketing"
+    "categoryId": "affiliate-marketing",
+    "pdfUrl": "/pdfs/1790684956248-LEARNORA_Affiliate_Marketing_Blueprint.pdf"
   },
   {
     "id": "c11",
@@ -118,7 +128,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790439110612-ChatGPT_Image_Sep_26,_2026,_10_58_19_AM.png",
-    "categoryId": "digital-marketing"
+    "categoryId": "digital-marketing",
+    "pdfUrl": "/pdfs/1790684973589-LEARNORA_Facebook_and_Instagram_Ads_Basics_2026.pdf"
   },
   {
     "id": "c12",
@@ -129,7 +140,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438833029-ChatGPT_Image_Sep_26,_2026,_10_58_22_AM.png",
-    "categoryId": "digital-marketing"
+    "categoryId": "digital-marketing",
+    "pdfUrl": "/pdfs/1790684999276-LEARNORA_SEO_for_Beginners_2026.pdf"
   },
   {
     "id": "c13",
@@ -140,7 +152,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438852328-Social_Media_Marketing_Guide.png",
-    "categoryId": "social-media"
+    "categoryId": "social-media",
+    "pdfUrl": "/pdfs/1790685031613-LEARNORA_Social_Media_Marketing_2026.pdf"
   },
   {
     "id": "c14",
@@ -151,7 +164,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438877124-Email_Marketing_Masterclass.png",
-    "categoryId": "digital-marketing"
+    "categoryId": "digital-marketing",
+    "pdfUrl": "/pdfs/1790685046245-LEARNORA_Email_Marketing_Masterclass_2026.pdf"
   },
   {
     "id": "c15",
@@ -162,7 +176,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438899268-Blogging_to_Income_Workspace.png",
-    "categoryId": "content-creation"
+    "categoryId": "content-creation",
+    "pdfUrl": "/pdfs/1790685227246-LEARNORA_Blogging_to_Income_2026.pdf"
   },
   {
     "id": "c16",
@@ -173,7 +188,8 @@
     "currentPrice": 399,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438917338-Digital_Product_Selling_Guide.png",
-    "categoryId": "e-commerce"
+    "categoryId": "e-commerce",
+    "pdfUrl": "/pdfs/1790685242487-LEARNORA_Digital_Product_Selling_Guide_2026.pdf"
   },
   {
     "id": "c17",
@@ -184,7 +200,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438929183-Digital_Marketing_Mastery_Dashboard.png",
-    "categoryId": "digital-marketing"
+    "categoryId": "digital-marketing",
+    "pdfUrl": "/pdfs/1790685255527-LEARNORA_Digital_Marketing_Mastery_2026.pdf"
   },
   {
     "id": "c18",
@@ -195,7 +212,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438940687-Complete_Web_Development_Guide.png",
-    "categoryId": "web-development"
+    "categoryId": "web-development",
+    "pdfUrl": "/pdfs/1790685268873-LEARNORA_Web_Development_Complete_Guide_2026.pdf"
   },
   {
     "id": "c19",
@@ -206,7 +224,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438961272-Dropshipping_Business_Blueprint.png",
-    "categoryId": "dropshipping"
+    "categoryId": "dropshipping",
+    "pdfUrl": "/pdfs/1790685202716-LEARNORA_Dropshipping_Business_Blueprint_2026.pdf"
   },
   {
     "id": "c20",
@@ -217,7 +236,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438980155-ChatGPT_Image_Sep_26,_2026,_10_58_57_AM.png",
-    "categoryId": "e-commerce"
+    "categoryId": "e-commerce",
+    "pdfUrl": "/pdfs/1790685185935-LEARNORA_E-commerce_Business_Mastery_2026.pdf"
   },
   {
     "id": "c21",
@@ -228,7 +248,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790438993876-Google_Ads_Complete_Guide_Workspace.png",
-    "categoryId": "digital-marketing"
+    "categoryId": "digital-marketing",
+    "pdfUrl": "/pdfs/1790685170730-LEARNORA_Google_Ads_Complete_Guide_2026.pdf"
   },
   {
     "id": "c22",
@@ -239,7 +260,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790439022054-WordPress_Website_Development_Workspace.png",
-    "categoryId": "web-development"
+    "categoryId": "web-development",
+    "pdfUrl": "/pdfs/1790685149409-LEARNORA_WordPress_Website_Development_2026.pdf"
   },
   {
     "id": "c23",
@@ -250,7 +272,8 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790439053001-Freelancing_Client_Acquisition_Complete_Guide.png",
-    "categoryId": "freelancing"
+    "categoryId": "freelancing",
+    "pdfUrl": "/pdfs/1790685100657-gemini The Freelance Client Acquisition System.pdf"
   },
   {
     "id": "c24",
@@ -261,6 +284,7 @@
     "currentPrice": 499,
     "discountPercentage": 50,
     "thumbnailUrl": "/course-thumbnails/1790439080813-AI-Powered_Digital_Marketing_Workspace.png",
-    "categoryId": "ai"
+    "categoryId": "ai",
+    "pdfUrl": "/pdfs/1790685063452-LEARNORA_AI-Powered_Digital_Marketing_2026.pdf"
   }
 ]

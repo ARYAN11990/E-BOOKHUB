@@ -46,7 +46,7 @@ function SuccessContent() {
         {/* Real download link to public/pdfs/courseId.pdf */}
         {course ? (
           <a 
-            href={`/pdfs/${course.id}.pdf`} 
+            href={course.pdfUrl || `/pdfs/${course.id}.pdf`} 
             download
             className="w-full btn-primary py-4 flex items-center justify-center text-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1"
           >

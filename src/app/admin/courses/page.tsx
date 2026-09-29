@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Course } from '@/data/mockCourses';
-import { Plus, Edit2, Trash2, X, Search, Loader2, UploadCloud } from 'lucide-react';
+import { Plus, Edit2, Trash2, X, Search, Loader2, UploadCloud, CheckCircle } from 'lucide-react';
 
 export default function AdminCourses() {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -15,7 +15,9 @@ export default function AdminCourses() {
   const [formData, setFormData] = useState<Partial<Course>>({});
   const [isSaving, setIsSaving] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [isUploadingPdf, setIsUploadingPdf] = useState(false);
   const [isDragOver, setIsDragOver] = useState(false);
+  const [isPdfDragOver, setIsPdfDragOver] = useState(false);
 
   useEffect(() => {
     fetchCourses();
@@ -55,9 +57,12 @@ export default function AdminCourses() {
     setIsModalOpen(true);
   };
 
-  const handleFileUpload = async (file: File) => {
+  const handleFileUpload = async (file: File, field: 'thumbnailUrl' | 'pdfUrl' = 'thumbnailUrl') => {
     if (!file) return;
-    setIsUploading(true);
+    
+    if (field === 'pdfUrl') setIsUploadingPdf(true);
+    else setIsUploading(true);
+
     try {
       const data = new FormData();
       data.append('file', file);
@@ -69,7 +74,7 @@ export default function AdminCourses() {
       const result = await res.json();
       
       if (result.success) {
-        setFormData(prev => ({ ...prev, thumbnailUrl: result.url }));
+        setFormData(prev => ({ ...prev, [field]: result.url }));
       } else {
         alert('Upload failed: ' + result.error);
       }
@@ -77,7 +82,8 @@ export default function AdminCourses() {
       console.error('Upload error', error);
       alert('Upload failed');
     } finally {
-      setIsUploading(false);
+      if (field === 'pdfUrl') setIsUploadingPdf(false);
+      else setIsUploading(false);
     }
   };
 
@@ -95,7 +101,25 @@ export default function AdminCourses() {
     e.preventDefault();
     setIsDragOver(false);
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      handleFileUpload(e.dataTransfer.files[0]);
+      handleFileUpload(e.dataTransfer.files[0], 'thumbnailUrl');
+    }
+  };
+
+  const onPdfDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsPdfDragOver(true);
+  };
+  
+  const onPdfDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsPdfDragOver(false);
+  };
+  
+  const onPdfDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsPdfDragOver(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFileUpload(e.dataTransfer.files[0], 'pdfUrl');
     }
   };
 
@@ -259,7 +283,7 @@ export default function AdminCourses() {
                           <div className="flex text-sm text-text-secondary">
                             <label className="relative cursor-pointer bg-transparent rounded-md font-medium text-brand-purple hover:text-brand-purpleDark">
                               <span>Change thumbnail</span>
-                              <input type="file" className="sr-only" accept="image/*" onChange={(e) => e.target.files && e.target.files[0] && handleFileUpload(e.target.files[0])} />
+                              <input type="file" className="sr-only" accept="image/*" onChange={(e) => e.target.files && e.target.files[0] && handleFileUpload(e.target.files[0], 'thumbnailUrl')} />
                             </label>
                             <p className="pl-1">or drag and drop</p>
                           </div>
@@ -270,7 +294,7 @@ export default function AdminCourses() {
                           <div className="flex text-sm text-text-secondary mt-2">
                             <label className="relative cursor-pointer bg-transparent rounded-md font-medium text-brand-purple hover:text-brand-purpleDark">
                               <span>Upload a file</span>
-                              <input type="file" className="sr-only" accept="image/*" onChange={(e) => e.target.files && e.target.files[0] && handleFileUpload(e.target.files[0])} />
+                              <input type="file" className="sr-only" accept="image/*" onChange={(e) => e.target.files && e.target.files[0] && handleFileUpload(e.target.files[0], 'thumbnailUrl')} />
                             </label>
                             <p className="pl-1">or drag and drop</p>
                           </div>
@@ -282,7 +306,48 @@ export default function AdminCourses() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-text-secondary mb-1">Category ID</label>
-                  <input required type="text" value={formData.categoryId || ''} onChange={(e) => setFormData({...formData, categoryId: e.target.value})} className="w-full px-4 py-2 bg-surface-main border border-border-light rounded-lg text-text-primary" />
+                  <input required type="text" value={formData.categoryId || ''} onChange={(e) => setFormData({...formData, categoryId: e.target.value})} className="w-full px-4 py-2 bg-surface-main border border-border-light rounded-lg text-text-primary mb-4" />
+                  
+                  <label className="block text-sm font-medium text-text-secondary mb-1">E-Book PDF File</label>
+                  <div 
+                    onDragOver={onPdfDragOver}
+                    onDragLeave={onPdfDragLeave}
+                    onDrop={onPdfDrop}
+                    className={`mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-lg transition-colors ${isPdfDragOver ? 'border-brand-purple bg-brand-purple/5' : 'border-border-light bg-surface-main hover:bg-surface-soft'}`}
+                  >
+                    <div className="space-y-1 text-center w-full">
+                      {isUploadingPdf ? (
+                        <div className="flex flex-col items-center">
+                          <Loader2 className="mx-auto h-12 w-12 text-brand-purple animate-spin" />
+                          <p className="mt-2 text-sm text-text-secondary">Uploading PDF...</p>
+                        </div>
+                      ) : formData.pdfUrl ? (
+                        <div className="flex flex-col items-center">
+                          <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-2">
+                            <CheckCircle className="w-6 h-6" />
+                          </div>
+                          <p className="text-sm text-text-primary font-medium truncate w-full max-w-[200px] mb-2">{formData.pdfUrl.split('/').pop()}</p>
+                          <div className="flex text-sm text-text-secondary">
+                            <label className="relative cursor-pointer bg-transparent rounded-md font-medium text-brand-purple hover:text-brand-purpleDark">
+                              <span>Change PDF</span>
+                              <input type="file" className="sr-only" accept=".pdf" onChange={(e) => e.target.files && e.target.files[0] && handleFileUpload(e.target.files[0], 'pdfUrl')} />
+                            </label>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center">
+                          <UploadCloud className="mx-auto h-12 w-12 text-text-muted" />
+                          <div className="flex text-sm text-text-secondary mt-2">
+                            <label className="relative cursor-pointer bg-transparent rounded-md font-medium text-brand-purple hover:text-brand-purpleDark">
+                              <span>Upload PDF</span>
+                              <input type="file" className="sr-only" accept=".pdf" onChange={(e) => e.target.files && e.target.files[0] && handleFileUpload(e.target.files[0], 'pdfUrl')} />
+                            </label>
+                          </div>
+                          <p className="text-xs text-text-muted mt-1">PDF file only</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
 
