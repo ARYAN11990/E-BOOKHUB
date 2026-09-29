@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import CourseCard from '@/components/ui/CourseCard';
 import { mockCourses } from '@/data/mockCourses';
 import { BookOpen, Star, TrendingUp, Users } from 'lucide-react';
@@ -95,7 +96,12 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">The Ultimate Creator Bundle</h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Get ALL 24 premium courses (worth ₹18,000+) for a single one-time payment.
-              </p>    
+              </p>
+              
+              <div className="relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden mb-10 shadow-2xl border-4 border-surface-soft/20">
+                <Image src="/course-thumbnails/bundle-image.jpg" alt="Ultimate Creator Bundle" fill className="object-cover" />
+              </div>
+
               <div className="flex items-end justify-center space-x-4 mb-10">
                 <span className="text-6xl font-extrabold text-white">₹1,999</span>
                 <span className="text-2xl text-gray-500 line-through font-bold mb-2">₹18,000</span>
