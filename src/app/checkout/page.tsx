@@ -158,8 +158,8 @@ function CheckoutForm() {
                   <input type="text" name="firstName" required value={formData.firstName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-text-primary">Last Name *</label>
-                  <input type="text" name="lastName" required value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
+                  <label className="block text-sm font-medium mb-2 text-text-primary">Last Name (Optional)</label>
+                  <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
                 </div>
               </div>
 

@@ -286,5 +286,16 @@
     "thumbnailUrl": "/course-thumbnails/1790439080813-AI-Powered_Digital_Marketing_Workspace.png",
     "categoryId": "ai",
     "pdfUrl": "/pdfs/1790685063452-LEARNORA_AI-Powered_Digital_Marketing_2026.pdf"
+  },
+  {
+    "id": "bundle",
+    "title": "The Ultimate Creator Bundle",
+    "shortDescription": "Get ALL 24 premium courses for a single one-time payment.",
+    "difficulty": "All Levels",
+    "originalPrice": 18000,
+    "currentPrice": 1999,
+    "discountPercentage": 89,
+    "thumbnailUrl": "/course-thumbnails/bundle.png",
+    "categoryId": "bundle"
   }
 ]

@@ -100,9 +100,9 @@ export default function Home() {
                 <span className="text-6xl font-extrabold text-white">₹1,999</span>
                 <span className="text-2xl text-gray-500 line-through font-bold mb-2">₹18,000</span>
               </div>
-              <button className="bg-white text-gray-900 font-extrabold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+              <Link href="/checkout?courseId=bundle" className="inline-block bg-white text-gray-900 font-extrabold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 Unlock Everything Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
