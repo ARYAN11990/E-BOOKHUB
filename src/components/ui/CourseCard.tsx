@@ -30,9 +30,7 @@ export default function CourseCard({ course }: CourseCardProps) {
           <span className="bg-brand-successLight text-brand-success text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
             {course.difficulty}
           </span>
-          <span className="bg-brand-lavender text-brand-purple text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">
-            PDF E-book
-          </span>
+          
         </div>
 
         <h3 className="text-lg font-bold text-text-primary mb-2 line-clamp-2 leading-tight group-hover:text-brand-purple transition-colors">
@@ -68,9 +66,9 @@ export default function CourseCard({ course }: CourseCardProps) {
                 </span>
               )}
             </div>
-            {course.discountPercentage > 0 && (
+            {course.originalPrice > course.currentPrice && (
               <span className="bg-brand-pink text-brand-pinkDark text-xs font-bold px-2 py-1 rounded-md">
-                {course.discountPercentage}% OFF
+                {Math.round(((course.originalPrice - course.currentPrice) / course.originalPrice) * 100)}% OFF
               </span>
             )}
           </div>
