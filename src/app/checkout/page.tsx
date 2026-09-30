@@ -18,8 +18,7 @@ function CheckoutForm() {
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     mobileNumber: '',
     acceptTerms: false
   });
@@ -78,7 +77,7 @@ function CheckoutForm() {
           }
         },
         prefill: {
-          name: formData.firstName + ' ' + formData.lastName,
+          name: formData.fullName,
           contact: formData.mobileNumber,
         },
         theme: {
@@ -152,15 +151,9 @@ function CheckoutForm() {
             </div>
 
             <form id="checkout-form" onSubmit={handlePayment} className="space-y-5 text-text-primary">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-text-primary">First Name *</label>
-                  <input type="text" name="firstName" required value={formData.firstName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2 text-text-primary">Last Name (Optional)</label>
-                  <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
-                </div>
+              <div>
+                <label className="block text-sm font-medium mb-2 text-text-primary">Full Name *</label>
+                <input type="text" name="fullName" required value={formData.fullName} onChange={handleChange} className="w-full px-4 py-3 bg-surface-soft border border-border-light rounded-lg text-text-primary focus:outline-none focus:border-brand-purple" />
               </div>
 
               <div>

@@ -95,7 +95,7 @@ export default function Home() {
               </span>
               <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">The Ultimate Creator Bundle</h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Get ALL 24 premium courses (worth ₹18,000+) for a single one-time payment.
+                Get ALL 24 premium courses (worth ₹4,500+) for a single one-time payment.
               </p>
               
               <div className="relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden mb-10 shadow-2xl border-4 border-surface-soft/20">
@@ -104,7 +104,7 @@ export default function Home() {
 
               <div className="flex items-end justify-center space-x-4 mb-10">
                 <span className="text-6xl font-extrabold text-white">₹1,999</span>
-                <span className="text-2xl text-gray-500 line-through font-bold mb-2">₹18,000</span>
+                <span className="text-2xl text-gray-500 line-through font-bold mb-2">₹4,576</span>
               </div>
               <Link href="/checkout?courseId=bundle" className="inline-block bg-white text-gray-900 font-extrabold text-lg py-4 px-10 rounded-xl hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 Unlock Everything Now
